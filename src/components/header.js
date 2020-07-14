@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import clsx from "clsx"
+import { Link } from "gatsby"
 import IconButton from "@material-ui/core/IconButton"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
@@ -21,7 +21,63 @@ const useStyles = makeStyles(theme => ({
   menuButton: {
     marginLeft: "auto",
   },
+
+  offset: { ...theme.mixins.toolbar, width: "100%" },
+  link: {
+    color: "inherit",
+  },
+  active: {
+    "& button": {
+      "background-color": theme.palette.primary.dark,
+    },
+  },
 }))
+
+const LinkButton = ({ to, children }) => {
+  const classes = useStyles()
+
+  return (
+    <Link to={to} className={classes.link} activeClassName={classes.active}>
+      <IconButton color="inherit" aria-label="open drawer">
+        {children}
+      </IconButton>
+    </Link>
+  )
+}
+
+const GridLinkItems = () => (
+  <>
+    <Grid item>
+      <LinkButton to="/">
+        <HomeIcon />
+      </LinkButton>
+    </Grid>
+
+    <Grid item>
+      <IconButton color="inherit" aria-label="open drawer">
+        <PersonIcon />
+      </IconButton>
+    </Grid>
+
+    <Grid item>
+      <IconButton color="inherit" aria-label="open drawer">
+        <BuildIcon />
+      </IconButton>
+    </Grid>
+
+    <Grid item>
+      <IconButton color="inherit" aria-label="open drawer">
+        <FolderIcon />
+      </IconButton>
+    </Grid>
+
+    <Grid item>
+      <LinkButton to="/contact">
+        <EmailIcon />
+      </LinkButton>
+    </Grid>
+  </>
+)
 
 const Header = () => {
   const classes = useStyles()
@@ -29,181 +85,62 @@ const Header = () => {
   const toggleMenu = () => setMenuOpen(prevState => !prevState)
 
   return (
-    <AppBar>
-      <Toolbar>
-        <Grid container justify="space-between" alignItems="center">
-          <Grid item>
-            <Typography variant="h6" noWrap>
-              Dashboard
-            </Typography>
+    <>
+      <AppBar>
+        <Toolbar>
+          <Grid container justify="space-between" alignItems="center">
+            <Grid item>
+              <Typography variant="h6" noWrap>
+                2J
+              </Typography>
+            </Grid>
+
+            <Hidden xsDown>
+              <Grid item>
+                <Grid container justify="space-between">
+                  <GridLinkItems />
+                </Grid>
+              </Grid>
+
+              <Grid item>
+                <Grid container alignContent="center">
+                  <Grid item></Grid>
+                  <IconButton color="inherit" aria-label="open drawer">
+                    <TwitterIcon />
+                  </IconButton>
+
+                  <Grid item>
+                    <IconButton color="inherit" aria-label="open drawer">
+                      <GitHubIcon />
+                    </IconButton>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Hidden>
           </Grid>
 
-          <Hidden xsDown>
-            <Grid item>
-              <Grid container justify="space-between">
-                <Grid item>
-                  <IconButton
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    className={classes.menuButton}
-                  >
-                    <HomeIcon />
-                  </IconButton>
-                </Grid>
-
-                <Grid item>
-                  <IconButton
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    className={classes.menuButton}
-                  >
-                    <PersonIcon />
-                  </IconButton>
-                </Grid>
-
-                <Grid item>
-                  <IconButton
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    className={classes.menuButton}
-                  >
-                    <BuildIcon />
-                  </IconButton>
-                </Grid>
-
-                <Grid item>
-                  <IconButton
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    className={classes.menuButton}
-                  >
-                    <FolderIcon />
-                  </IconButton>
-                </Grid>
-
-                <Grid item>
-                  <IconButton
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    className={classes.menuButton}
-                  >
-                    <EmailIcon />
-                  </IconButton>
-                </Grid>
-              </Grid>
-            </Grid>
-
-            <Grid item>
-              <Grid container alignContent="center">
-                <Grid item></Grid>
-                <IconButton
-                  edge="start"
-                  color="inherit"
-                  aria-label="open drawer"
-                  className={classes.menuButton}
-                >
-                  <TwitterIcon />
-                </IconButton>
-
-                <Grid item>
-                  <IconButton
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    className={classes.menuButton}
-                  >
-                    <GitHubIcon />
-                  </IconButton>
-                </Grid>
-              </Grid>
-            </Grid>
+          <Hidden smUp>
+            <IconButton
+              color="inherit"
+              onClick={toggleMenu}
+              aria-label="open drawer"
+            >
+              <MenuIcon />
+            </IconButton>
           </Hidden>
-        </Grid>
+        </Toolbar>
 
         <Hidden smUp>
-          <IconButton
-            edge="start"
-            color="inherit"
-            onClick={toggleMenu}
-            aria-label="open drawer"
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
+          <Grow in={isMenuOpen} unmountOnExit>
+            <Grid container spacing={3} justify="space-between">
+              <GridLinkItems />
+            </Grid>
+          </Grow>
         </Hidden>
-      </Toolbar>
+      </AppBar>
 
-      <Hidden smUp>
-        <Grow in={isMenuOpen} unmountOnExit>
-          <Grid
-            container
-            spacing={3}
-            justify="space-between"
-            className={classes.mobileMenu}
-          >
-            <Grid item>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-                className={classes.menuButton}
-              >
-                <HomeIcon />
-              </IconButton>
-            </Grid>
-
-            <Grid item>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-                className={classes.menuButton}
-              >
-                <PersonIcon />
-              </IconButton>
-            </Grid>
-
-            <Grid item>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-                className={classes.menuButton}
-              >
-                <BuildIcon />
-              </IconButton>
-            </Grid>
-
-            <Grid item>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-                className={classes.menuButton}
-              >
-                <FolderIcon />
-              </IconButton>
-            </Grid>
-
-            <Grid item>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-                className={classes.menuButton}
-              >
-                <EmailIcon />
-              </IconButton>
-            </Grid>
-          </Grid>
-        </Grow>
-      </Hidden>
-    </AppBar>
+      <div className={classes.offset} />
+    </>
   )
 }
 

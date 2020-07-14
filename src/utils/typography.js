@@ -1,5 +1,4 @@
 import Typography from "typography"
-import { TextareaAutosize } from "@material-ui/core"
 
 const typography = new Typography({
   baseFontSize: "16px",
