@@ -21,6 +21,7 @@
     "@material-ui/styles": "^4.10.0",
     "clsx": "^1.1.1",
     "gatsby": "^2.22.15",
+    "gatsby-plugin-material-ui": "^2.1.9",
     "gatsby-plugin-react-helmet": "^3.3.4",
     "gatsby-plugin-typography": "^2.5.4",
     "react": "^16.12.0",
