@@ -1,4 +1,5 @@
 import React from "react"
+import clsx from "clsx"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers"
 import { object, string } from "yup"
@@ -9,6 +10,7 @@ import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
 import Grow from "@material-ui/core/Grow"
 import Container from "@material-ui/core/Container"
+import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 
 import Layout from "../components/layout"
@@ -35,10 +37,14 @@ const useStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(3),
   },
+  spacing: {
+    marginBottom: theme.spacing(3),
+  },
 }))
 
 const Contact = () => {
   const classes = useStyles()
+  const paperIntro = clsx(classes.paper, classes.spacing)
 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
@@ -48,6 +54,37 @@ const Contact = () => {
     <Layout>
       <main>
         <Container>
+          <Paper elevation={3} className={paperIntro}>
+            <Typography
+              gutterBottom
+              variant="h2"
+              component="h1"
+              color="textPrimary"
+              className={classes.typography}
+            >
+              Contact me
+            </Typography>
+            <Typography
+              gutterBottom
+              variant="body1"
+              component="p"
+              color="textPrimary"
+              className={classes.typography}
+            >
+              I specialize in web and mobile development, feel free to reach me
+              out to discuss your projects, or any other inquires about my work.
+            </Typography>
+            <Typography
+              gutterBottom
+              variant="body1"
+              component="p"
+              color="textPrimary"
+              className={classes.typography}
+            >
+              Just send me an email and I will contact you back.
+            </Typography>
+          </Paper>
+
           <Paper elevation={3} className={classes.paper}>
             <Grid container spacing={5} justify="center" alignItems="center">
               <Grid item xs={12} lg={6}>
@@ -102,7 +139,7 @@ const Contact = () => {
                           variant="contained"
                           color="primary"
                         >
-                          Send
+                          <strong>Send</strong>
                         </Button>
                       </Box>
                     </Grid>

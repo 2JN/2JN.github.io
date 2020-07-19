@@ -1,5 +1,6 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
+import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
 import Paper from "@material-ui/core/Paper"
 import Container from "@material-ui/core/Container"
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 
 const ContactButton = () => (
   <Button variant="contained" color="primary" size="large">
-    CONTACT ME
+    <strong>CONTACT ME</strong>
   </Button>
 )
 
