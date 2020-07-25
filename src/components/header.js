@@ -22,7 +22,14 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "auto",
   },
 
-  offset: { ...theme.mixins.toolbar, width: "100%" },
+  offset: {
+    ...theme.mixins.toolbar,
+    width: "100%",
+    marginBottom: theme.spacing(2),
+    [theme.breakpoints.up("sm")]: {
+      marginBottom: "0",
+    },
+  },
   link: {
     color: "inherit",
   },
@@ -60,9 +67,9 @@ const GridLinkItems = () => (
     </Grid>
 
     <Grid item>
-      <IconButton color="inherit" aria-label="open drawer">
+      <LinkButton to="/skills" aria-label="open drawer">
         <BuildIcon />
-      </IconButton>
+      </LinkButton>
     </Grid>
 
     <Grid item>

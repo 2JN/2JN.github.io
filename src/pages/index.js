@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
@@ -28,9 +29,11 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const ContactButton = () => (
-  <Button variant="contained" color="primary" size="large">
-    <strong>CONTACT ME</strong>
-  </Button>
+  <Link to="/contact">
+    <Button variant="contained" color="primary" size="large">
+      <strong>CONTACT ME</strong>
+    </Button>
+  </Link>
 )
 
 export default function Home() {
