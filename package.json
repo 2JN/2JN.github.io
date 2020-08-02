@@ -16,21 +16,20 @@
   },
   "dependencies": {
     "@hookform/resolvers": "0.0.6",
-    "@material-ui/core": "^4.10.2",
+    "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.10.0",
     "clsx": "^1.1.1",
-    "gatsby": "^2.22.15",
-    "gatsby-plugin-material-ui": "^2.1.9",
-    "gatsby-plugin-react-helmet": "^3.3.4",
-    "gatsby-plugin-typography": "^2.5.4",
+    "gatsby": "^2.24.23",
+    "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-theme-material-ui": "^1.0.13",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
-    "react-hook-form": "^6.0.4",
+    "react-hook-form": "^6.2.0",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
-    "yup": "^0.29.1"
+    "yup": "^0.29.2"
   },
   "devDependencies": {
     "gh-pages": "^3.1.0",

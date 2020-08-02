@@ -12,6 +12,7 @@ const theme = createMuiTheme({
       main: "#1e88e5",
     },
   },
+  mierda: "mierda",
   overrides: {
     MuiCssBaseline: {
       "@global": {
