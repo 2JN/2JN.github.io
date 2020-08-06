@@ -26,9 +26,6 @@ const sendEmail = data => {
 const useStyles = makeStyles(theme => ({
   typography: {
     textAlign: "center",
-    [theme.breakpoints.up("lg")]: {
-      textAlign: "left",
-    },
   },
   imgContainer: {
     textAlign: "center",
@@ -53,34 +50,37 @@ const Contact = () => {
     <main>
       <Container>
         <Paper elevation={3} className={paperIntro}>
-          <Typography
-            gutterBottom
-            variant="h2"
-            component="h1"
-            color="textPrimary"
-            className={classes.typography}
-          >
-            Contact me
-          </Typography>
-          <Typography
-            gutterBottom
-            variant="body1"
-            component="p"
-            color="textPrimary"
-            className={classes.typography}
-          >
-            I specialize in web and mobile development, feel free to reach me
-            out to discuss your projects, or any other inquires about my work.
-          </Typography>
-          <Typography
-            gutterBottom
-            variant="body1"
-            component="p"
-            color="textPrimary"
-            className={classes.typography}
-          >
-            Just send me an email and I will contact you back.
-          </Typography>
+          <Grid container spacing={3} justify="center" alignItems="center">
+            <Grid item xs={12} md={8}>
+              <Typography
+                gutterBottom
+                variant="h2"
+                component="h1"
+                color="textPrimary"
+                className={classes.typography}
+              >
+                Contact me
+              </Typography>
+              <Typography
+                gutterBottom
+                variant="body1"
+                component="p"
+                color="textPrimary"
+              >
+                I specialize in web and mobile development, feel free to reach
+                me out to discuss your projects, or any other inquires about my
+                work.
+              </Typography>
+              <Typography
+                gutterBottom
+                variant="body1"
+                component="p"
+                color="textPrimary"
+              >
+                Just send me an email and I will contact you back.
+              </Typography>
+            </Grid>
+          </Grid>
         </Paper>
 
         <Paper elevation={3} className={classes.paper}>
