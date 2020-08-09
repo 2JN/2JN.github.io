@@ -1,67 +1,47 @@
 import React from "react"
 import clsx from "clsx"
 import Grid from "@material-ui/core/Grid"
-import Box from "@material-ui/core/Box"
-import Grow from "@material-ui/core/Grow"
 import Paper from "@material-ui/core/Paper"
-import Hidden from "@material-ui/core/Hidden"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
-import List from "@material-ui/core/List"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemIcon from "@material-ui/core/ListItemIcon"
-import ListItemText from "@material-ui/core/ListItemText"
 import { makeStyles } from "@material-ui/core/styles"
 
+import Skill from "./skills/skill"
+
+import sourceLogo from "../assets/images/source-code.svg"
 import jsLogo from "../assets/images/javascript.svg"
+import phpLogo from "../assets/images/php.svg"
+import pythonLogo from "../assets/images/python.svg"
 
-const useStyles = makeStyles(
-  theme =>
-    console.log(theme) || {
-      header: {
-        textAlign: "center",
-      },
-      imgContainer: {
-        textAlign: "center",
-      },
-      paper: {
-        padding: theme.spacing(3),
-      },
-      skillsContainer: {
-        display: "flex",
-
-        "& article": {
-          padding: `${theme.spacing(1)}px ${theme.spacing(3)}px`,
-        },
-
-        "& section": {
-          padding: `0 ${theme.spacing(3)}px`,
-        },
-      },
-      skills: {
-        "& img": {
-          width: "48px",
-          height: "auto",
-        },
-      },
-      skillItem: {
-        "& span": {
-          fontWeight: "bold",
-        },
-      },
-      js: {
-        color: "#323330",
-        backgroundColor: "#f0db4f",
-      },
-      spacing: {
-        marginBottom: theme.spacing(3),
-      },
-    }
-)
+const useStyles = makeStyles(theme => ({
+  header: {
+    textAlign: "center",
+  },
+  paper: {
+    padding: theme.spacing(3),
+  },
+  web: {
+    backgroundColor: theme.palette.background.default,
+  },
+  js: {
+    color: "#323330",
+    backgroundColor: "#f0db4f",
+  },
+  php: {
+    color: "#323330",
+    backgroundColor: "#8993beff",
+  },
+  python: {
+    color: "#323330",
+    backgroundColor: "#646464",
+  },
+  spacing: {
+    marginBottom: theme.spacing(3),
+  },
+}))
 
 const Skills = () => {
   const classes = useStyles()
-  const skillsJs = clsx(classes.skills, classes.js)
   const paperIntro = clsx(classes.paper, classes.spacing)
 
   return (
@@ -90,36 +70,37 @@ const Skills = () => {
         </Paper>
 
         <Paper elevation={3} className={classes.paper}>
-          <Grid container spacing={3} justify="center" alignItems="center">
-            <Grid item xs={12} lg={6}>
-              <section className={classes.skillsContainer}>
-                <article className={skillsJs}>
-                  <img src={jsLogo} />
+          <Grid container spacing={3} justify="center">
+            <Grid item>
+              <Skill
+                styles={classes.web}
+                imgSrc={sourceLogo}
+                subset={["HTML", "CSS", "GIT"]}
+              />
+            </Grid>
 
-                  <section>
-                    <List aria-label="js skills">
-                      <ListItem>
-                        <ListItemText
-                          primary="React"
-                          className={classes.skillItem}
-                        />
-                      </ListItem>
-                      <ListItem>
-                        <ListItemText
-                          primary="Node"
-                          className={classes.skillItem}
-                        />
-                      </ListItem>
-                      <ListItem>
-                        <ListItemText
-                          primary="Express"
-                          className={classes.skillItem}
-                        />
-                      </ListItem>
-                    </List>
-                  </section>
-                </article>
-              </section>
+            <Grid item>
+              <Skill
+                styles={classes.js}
+                imgSrc={jsLogo}
+                subset={["React", "Node", "Express"]}
+              />
+            </Grid>
+
+            <Grid item>
+              <Skill
+                styles={classes.php}
+                imgSrc={phpLogo}
+                subset={["Laravel", "Code Igniter"]}
+              />
+            </Grid>
+
+            <Grid item>
+              <Skill
+                styles={classes.python}
+                imgSrc={pythonLogo}
+                subset={["Django", "Flask"]}
+              />
             </Grid>
           </Grid>
         </Paper>
