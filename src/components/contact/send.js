@@ -28,7 +28,8 @@ const Send = ({ data }) => {
   const classes = useStyles()
   const { data: res, error } = useSWR(
     ["https://formspree.io/mzbjqvnr", data],
-    fetcher
+    fetcher,
+    { revalidateOnFocus: false }
   )
 
   if (error)
