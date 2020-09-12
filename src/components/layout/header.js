@@ -61,21 +61,9 @@ const GridLinkItems = () => (
     </Grid>
 
     <Grid item>
-      <IconButton color="inherit" aria-label="open drawer">
-        <PersonIcon />
-      </IconButton>
-    </Grid>
-
-    <Grid item>
-      <LinkButton to="/skills" aria-label="open drawer">
+      <LinkButton to="/skills">
         <BuildIcon />
       </LinkButton>
-    </Grid>
-
-    <Grid item>
-      <IconButton color="inherit" aria-label="open drawer">
-        <FolderIcon />
-      </IconButton>
     </Grid>
 
     <Grid item>
