@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap");
+
+:root,
+:root.dark {
+  --background-color: #252422;
+  --primary-color: #fffcf2;
+  --secondary-color: #eb5e28;
+  --grey-color: #ccc5b9;
+  --dark-grey-color: #403d39;
+}

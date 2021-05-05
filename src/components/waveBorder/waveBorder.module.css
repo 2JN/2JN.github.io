@@ -1,0 +1,19 @@
+.waveBorder {
+  height: 150px;
+  overflow: hidden;
+}
+
+.waveBorder svg {
+  width: 100%;
+  height: 100%;
+}
+
+.waveBorder svg path:first-child {
+  stroke: none;
+  fill: var(--dark-grey-color);
+}
+
+.waveBorder svg path:last-child {
+  stroke: var(--dark-grey-color);
+  fill: none;
+}
