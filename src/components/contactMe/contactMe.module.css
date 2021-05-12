@@ -1,0 +1,16 @@
+.contactMe form button {
+  font-size: 1.5rem;
+}
+
+.contactMe :global(.container) {
+  margin: 4rem auto 8rem;
+}
+
+.inputContainer {
+  margin-bottom: 2.5rem;
+}
+
+.inputContainer textarea {
+  resize: none;
+  height: 16rem;
+}

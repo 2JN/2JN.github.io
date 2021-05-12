@@ -1,8 +1,8 @@
-.presentation {
+.description {
   margin: 7rem auto;
 }
 
-.presentation p {
+.description p {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
@@ -10,8 +10,4 @@
 .btnContainer {
   margin-top: 6rem;
   text-align: center;
-}
-
-:global :local(.presentation .animation) {
-  animation: fadeInUp 1s ease-in-out both;
 }

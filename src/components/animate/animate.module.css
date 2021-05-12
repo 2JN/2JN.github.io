@@ -1,0 +1,7 @@
+:global :local(.up .animation) {
+  animation: fadeInUp 1s ease-in-out both;
+}
+
+:global :local(.left .animation) {
+  animation: fadeInLeft 1s ease-in-out both;
+}

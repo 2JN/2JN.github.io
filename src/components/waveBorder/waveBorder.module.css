@@ -8,12 +8,26 @@
   height: 100%;
 }
 
-.waveBorder svg path:first-child {
+.waveBorderBottom {
+  background-color: var(--dark-grey-color);
+}
+
+.waveBorderTop svg path:first-child {
   stroke: none;
   fill: var(--dark-grey-color);
 }
 
-.waveBorder svg path:last-child {
+.waveBorderTop svg path:last-child {
   stroke: var(--dark-grey-color);
+  fill: none;
+}
+
+.waveBorderBottom svg path:first-child {
+  stroke: none;
+  fill: var(--background-color);
+}
+
+.waveBorderBottom svg path:last-child {
+  stroke: var(--background-color);
   fill: none;
 }
