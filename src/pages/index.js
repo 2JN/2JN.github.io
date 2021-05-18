@@ -1,6 +1,7 @@
 import React from "react";
 
 import Cover from "../components/cover";
+import Nav from "../components/nav";
 import Description from "../components/description";
 import Projects from "../components/projects";
 import WaveBorder from "../components/waveBorder";
@@ -10,6 +11,7 @@ const IndexPage = () => {
   return (
     <main>
       <Cover />
+      <Nav />
       <Description />
       <WaveBorder borderColor={"top"} />
       <Projects />

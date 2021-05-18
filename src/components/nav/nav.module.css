@@ -1,0 +1,59 @@
+.iconButton svg {
+  width: 30px;
+  height: 30px;
+}
+
+.nav {
+  height: 60px;
+}
+
+.nav :global(.container) {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav :global(.container > *) {
+  line-height: 0;
+}
+
+.mobileNav {
+  margin-left: auto;
+}
+
+.nav a.logo {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.nav a:visited {
+  color: var(--secondary-color);
+}
+
+.nav .iconButton {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  padding: 0;
+}
+
+.nav .iconButton > * {
+  position: absolute;
+  top: 0;
+  line-height: 0;
+}
+
+.nav ul.mdList {
+  display: none;
+}
+
+:global :local(.rotateOut svg) {
+  animation: rotateOut 1s ease-in-out both;
+}
+
+:global :local(.rotateIn svg) {
+  animation: rotateIn 1s ease-in-out both;
+}
