@@ -9,16 +9,18 @@ const Animate = ({ animate = "up", children }) => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
+      if (!animationRef.current) return;
+
       if (entry.isIntersecting && entry.intersectionRect.top)
         animationRef.current.classList.add(styles.animation);
       else animationRef.current.classList.remove(styles.animation);
     });
 
     if (wrapperRef.current) observer.observe(wrapperRef.current);
-  }, [wrapperRef]);
+  }, [wrapperRef, animationRef]);
 
   return (
-    <div ref={wrapperRef} className={`${styles.wrapper} ${styles[animate]}`}>
+    <div ref={wrapperRef} className={styles[animate]}>
       <div ref={animationRef}>{children}</div>
     </div>
   );
@@ -26,7 +28,7 @@ const Animate = ({ animate = "up", children }) => {
 
 Animate.propTypes = {
   animate: PropTypes.oneOf(["up", "left"]),
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Animate;

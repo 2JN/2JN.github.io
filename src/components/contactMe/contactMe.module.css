@@ -2,6 +2,12 @@
   font-size: 1.5rem;
 }
 
+.contactMe form fieldset {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
 .contactMe :global(.container) {
   margin: 4rem auto 8rem;
 }
@@ -13,4 +19,10 @@
 .inputContainer textarea {
   resize: none;
   height: 16rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .contactMe form {
+    max-width: 50%;
+  }
 }

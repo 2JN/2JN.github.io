@@ -99,3 +99,18 @@ ul {
   max-width: 100%;
   height: auto;
 }
+
+svg.icon {
+  stroke: var(--secondary-color);
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+span[role="button"] {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+span[role="button"]:hover {
+  text-decoration: underline;
+}
