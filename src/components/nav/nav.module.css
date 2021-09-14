@@ -5,6 +5,18 @@
 
 .nav {
   height: 60px;
+  position: sticky;
+  background: var(--background-color);
+  transition: all 0.3s linear;
+  z-index: 50;
+}
+
+.nav.scrollDown {
+  top: -60px;
+}
+
+.nav.scrollUp {
+  top: 0;
 }
 
 .nav :global(.container) {
@@ -15,9 +27,10 @@
 
 .nav :global(.container > *) {
   line-height: 0;
+  position: relative;
 }
 
-.mobileNav {
+.mobileMenu {
   margin-left: auto;
 }
 
@@ -46,8 +59,28 @@
   line-height: 0;
 }
 
-.nav ul.mdList {
+.nav .menuList {
   display: none;
+  margin-left: auto;
+  line-height: 1;
+  list-style-type: none;
+}
+
+.nav .menuList li {
+  margin-left: 2.5rem;
+}
+
+.nav ul.mobileList {
+  width: 100%;
+  margin: 0;
+  padding: 0.75rem;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  font-size: 2rem;
+  line-height: 2;
+  background-color: var(--background-color);
+  list-style-type: none;
 }
 
 :global :local(.rotateOut svg) {
@@ -56,4 +89,23 @@
 
 :global :local(.rotateIn svg) {
   animation: rotateIn 1s ease-in-out both;
+}
+
+:global :local(.fadeIn) {
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+:global :local(.fadeOut) {
+  animation: fadeOut 0.5s ease-in-out both;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav .menuList {
+    display: flex;
+  }
+
+  .nav .mobileMenu,
+  .nav ul.mobileList {
+    display: none;
+  }
 }

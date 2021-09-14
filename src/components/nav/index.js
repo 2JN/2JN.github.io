@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import clsx from "clsx";
 
 import MenuIcon from "../icons/menu";
 import CrossIcon from "../icons/cross";
@@ -19,11 +20,8 @@ const Nav = () => {
   const [isOpen, setOpen] = useState(false);
 
   const isScrollingDown = () => {
-    let scrolledPosition = window.scrollY;
-    let isScrollDown;
-
-    if (scrolledPosition > previousScrollPosition) isScrollDown = true;
-    else isScrollDown = false;
+    const scrolledPosition = window.scrollY;
+    const isScrollDown = scrolledPosition > previousScrollPosition.current;
 
     previousScrollPosition.current = scrolledPosition;
     return isScrollDown;
@@ -45,21 +43,19 @@ const Nav = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      console.log(previousScrollPosition);
       if (elementInViewport(navRef.current)) {
         if (isScrollingDown()) {
-          navRef.current.classList.add("scroll-down");
-          navRef.current.classList.remove("scroll-up");
+          navRef.current.classList.add(styles.scrollDown);
+          navRef.current.classList.remove(styles.scrollUp);
+
+          setOpen(false);
         } else {
-          navRef.current.classList.add("scroll-up");
-          navRef.current.classList.remove("scroll-down");
+          navRef.current.classList.add(styles.scrollUp);
+          navRef.current.classList.remove(styles.scrollDown);
         }
-      } else if (
-        navRef.current.classList.contains("visible") &&
-        !elementInViewport(navRef.current)
-      ) {
-        navRef.current.classList.remove("scroll-up");
-        navRef.current.classList.remove("scroll-down");
+      } else {
+        navRef.current.classList.remove(styles.scrollUp);
+        navRef.current.classList.remove(styles.scrollDown);
       }
     });
   }, [navRef]);
@@ -74,7 +70,15 @@ const Nav = () => {
         <a href="/" className={styles.logo}>
           2J
         </a>
-        <div className={styles.mobileNav}>
+
+        <ul className={styles.menuList}>
+          <li>About</li>
+          <li>Skills</li>
+          <li>Projects</li>
+          <li>Contact</li>
+        </ul>
+
+        <div className={styles.mobileMenu}>
           <button className={styles.iconButton} onClick={onMenuClick}>
             <div ref={menuRef}>
               <MenuIcon />
@@ -83,13 +87,18 @@ const Nav = () => {
               <CrossIcon />
             </div>
           </button>
-          <ul className={styles.mdList}>
-            <li>About</li>
-            <li>Skills</li>
-            <li>Projects</li>
-            <li>Contact</li>
-          </ul>
         </div>
+        <ul
+          className={clsx(styles.mobileList, {
+            [styles.fadeIn]: isOpen,
+            [styles.fadeOut]: !isOpen,
+          })}
+        >
+          <li>About</li>
+          <li>Skills</li>
+          <li>Projects</li>
+          <li>Contact</li>
+        </ul>
       </div>
     </nav>
   );
