@@ -28,10 +28,19 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
 section h2 {
   font-size: 3rem;
 }
 
+section h1,
 section h2,
 section h3 {
   margin-top: 0;
@@ -98,6 +107,20 @@ ul {
 .img-fluid {
   max-width: 100%;
   height: auto;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-container > * {
+  width: 100%;
+}
+
+.page-container > .page-footer {
+  align-self: flex-end;
 }
 
 svg.icon {

@@ -16,7 +16,7 @@ const Description = () => {
           </p>
 
           <p>
-            I've build websites since 2018, I focus on responsive design,
+            I've built websites since 2018, I focus on responsive design,
             animations and accessibility, combined with digital marketing.
           </p>
 

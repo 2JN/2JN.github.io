@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "gatsby";
 import clsx from "clsx";
 
 import MenuIcon from "../icons/menu";
@@ -7,6 +8,7 @@ import * as styles from "./nav.module.css";
 
 const elementInViewport = (el) => {
   const elementTop = el.getBoundingClientRect().top;
+
   return (
     elementTop <= (window.innerHeight || document.documentElement.clientHeight)
   );
@@ -43,6 +45,8 @@ const Nav = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
+      if (!navRef.current) return;
+
       if (elementInViewport(navRef.current)) {
         if (isScrollingDown()) {
           navRef.current.classList.add(styles.scrollDown);
@@ -72,7 +76,11 @@ const Nav = () => {
         </a>
 
         <ul className={styles.menuList}>
-          <li>About</li>
+          <li>
+            <Link to="/about" activeClassName={styles.activeLink}>
+              About
+            </Link>
+          </li>
           <li>Skills</li>
           <li>Projects</li>
           <li>Contact</li>
@@ -94,7 +102,11 @@ const Nav = () => {
             [styles.fadeOut]: !isOpen,
           })}
         >
-          <li>About</li>
+          <li>
+            <Link to="/about" activeClassName={styles.activeLink}>
+              About
+            </Link>
+          </li>
           <li>Skills</li>
           <li>Projects</li>
           <li>Contact</li>

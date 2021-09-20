@@ -1,0 +1,17 @@
+.footer {
+  height: 5rem;
+}
+
+.icon {
+  width: 2rem;
+  margin-right: 1rem;
+  fill: var(--secondary-color);
+}
+
+.primaryBackground {
+  background-color: var(--background-color);
+}
+
+.secondaryBackground {
+  background-color: var(--dark-grey-color);
+}

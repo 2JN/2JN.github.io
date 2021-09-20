@@ -6,6 +6,7 @@ import Description from "../components/description";
 import Projects from "../components/projects";
 import WaveBorder from "../components/waveBorder";
 import ContactMe from "../components/contactMe";
+import Footer from "../components/footer";
 
 const IndexPage = () => {
   return (
@@ -18,6 +19,7 @@ const IndexPage = () => {
       <WaveBorder />
       <ContactMe />
       <WaveBorder borderColor={"top"} />
+      <Footer background="secondary" />
     </main>
   );
 };

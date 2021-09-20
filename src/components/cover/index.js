@@ -8,7 +8,7 @@ const Cover = () => (
       <h4>Jose Navas</h4>
       <p>Full Stack JavaScript Developer,</p>
       <p>Passionate Technology Enthusiast</p>
-      <h4>Builder of Responsive and Accesible Websites</h4>
+      <h4>Builder of Responsive and Accessible Websites</h4>
     </div>
   </header>
 );
