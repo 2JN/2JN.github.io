@@ -1,0 +1,249 @@
+ul li svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--primary-color);
+}
+
+.resumeContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background: white;
+  box-shadow: 0 2rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.percent {
+  position: relative;
+  width: 100%;
+  height: 0.5rem;
+}
+
+.percent div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.percent div .bar {
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+}
+
+.animate .percent div .bar {
+  animation: bartTransition 1s ease-in-out 0.2s both;
+}
+
+.resumeContainer .leftSide {
+  padding: 3rem;
+  background: var(--secondary-color);
+}
+
+.profileText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profileText .imgBox {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profileText .imgBox img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.profileText h2 {
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1.4rem;
+  margin-top: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.profileText h2 span {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.contactInfo {
+  padding-top: 3rem;
+}
+
+.title {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.contactInfo ul {
+  margin-top: 20px;
+}
+
+.contactInfo ul li {
+  margin: 0.75rem 0;
+  margin-top: 20px;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contactInfo ul li span {
+  color: white;
+  font-weight: 300;
+  margin-left: 1rem;
+}
+
+.contactInfo.education ul li,
+.contactInfo.lang ul li {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.contactInfo.education h5 {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.contactInfo.education h4 {
+  color: white;
+  font-weight: 300;
+}
+
+.contactInfo.education h4:nth-child(2) {
+  color: white;
+  font-weight: 500;
+}
+
+.contactInfo.lang ul li span {
+  margin: 0;
+}
+
+.contactInfo.lang .percent {
+  display: block;
+  margin-top: 5px;
+  background-color: var(--background-color);
+}
+
+.resumeContainer .rightSide {
+  padding: 3rem;
+  background-color: var(--dark-grey-color);
+}
+
+.about {
+  margin-bottom: 3rem;
+}
+
+.about:last-child {
+  margin-bottom: 0;
+}
+
+h2.title {
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.875rem;
+}
+
+.about .box {
+  display: flex;
+  margin: 1.25rem 0;
+}
+
+.about .box .time {
+  min-width: 150px;
+}
+
+.about .box .time h5 {
+  color: var(--grey-color);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.about .box .text h4 {
+  color: var(--secondary-color);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.skills .box {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills .box h4 {
+  color: var(--grey-color);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.skills .box .percent {
+  background-color: var(--background-color);
+}
+
+.interest ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.interest ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  margin: 0.875rem 0;
+}
+
+.interest ul li svg {
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .resumeContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .interest ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about .box {
+    flex-direction: column;
+  }
+
+  .about .box .time {
+    margin-bottom: 0.125rem;
+  }
+
+  .skills .box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@keyframes bartTransition {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}

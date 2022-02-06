@@ -21,7 +21,9 @@ const Animate = ({ animate = "up", children }) => {
 
   return (
     <div ref={wrapperRef} className={styles[animate]}>
-      <div ref={animationRef}>{children}</div>
+      <div ref={animationRef} className={styles.animation}>
+        {children}
+      </div>
     </div>
   );
 };

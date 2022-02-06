@@ -1,8 +1,12 @@
 import React from "react";
 
 import * as styles from "./about.module.css";
+import Resume from "../resume";
+import Animate from "../Animate";
 
 const About = () => {
+  // TODO: wait for page to load to show content
+
   return (
     <section>
       <div className="container">
@@ -15,14 +19,10 @@ const About = () => {
           down there!
         </p>
 
-        <div className={styles.btnContainer}>
-          <a
-            className="btn btn-round btn-primary"
-            href="/CV - Jonathan Esquivel.pdf"
-            download
-          >
-            Download Resume
-          </a>
+        <div className={styles.resume}>
+          <Animate>
+            <Resume />
+          </Animate>
         </div>
       </div>
     </section>
