@@ -35,7 +35,10 @@ const Resume = () => {
       <section className={styles.leftSide}>
         <div className={styles.profileText}>
           <div className={styles.imgBox}>
-            <img src="https://secure.gravatar.com/avatar/140c45d1b4768a444ded020076e81ad5?size=200" />
+            <img
+              src="https://secure.gravatar.com/avatar/140c45d1b4768a444ded020076e81ad5?size=200"
+              alt="Jonathan Esquivel"
+            />
           </div>
           <h2>
             Jonathan Esquivel <br />

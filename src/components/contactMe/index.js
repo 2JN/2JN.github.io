@@ -48,8 +48,10 @@ const ContactMe = () => {
       });
   };
 
-  const showForm = () => {
-    setState({ data: {}, loading, error });
+  const showForm = (e) => {
+    if (e.type === "keydown" && e.keyCode !== 13) return;
+
+    setState({ data: {}, loading: false, error: false });
   };
 
   return (
@@ -65,7 +67,12 @@ const ContactMe = () => {
 
             <p>
               Wanted to say something else?{" "}
-              <span role="button" onClick={showForm}>
+              <span
+                role="button"
+                tabIndex={0}
+                onClick={showForm}
+                onKeyDown={showForm}
+              >
                 Click Here
               </span>
             </p>
