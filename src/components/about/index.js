@@ -2,7 +2,7 @@ import React from "react";
 
 import * as styles from "./about.module.css";
 import Resume from "../resume";
-import Animate from "../Animate";
+import Animate from "../animate";
 
 const About = () => {
   // TODO: wait for page to load to show content

@@ -14,7 +14,7 @@ const ContactMe = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const [{ data, loading, error }, setState] = useState({
+  const [{ data, loading }, setState] = useState({
     data: {},
     loading: false,
     error: false,
