@@ -14,7 +14,7 @@ const About = () => {
 
         <p>
           I'm Web Developer that focuses on building websites that help to
-          connect with business' audiences with engaging visuals and intuitive
+          connect with business' audiences using engaging visuals and intuitive
           interfaces. You can take a look to whole set of skills on my resume
           down there!
         </p>

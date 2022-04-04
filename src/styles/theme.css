@@ -7,4 +7,11 @@
   --secondary-color: #eb5e28;
   --grey-color: #ccc5b9;
   --dark-grey-color: #403d39;
+
+  /* screens */
+  --screens-sm: 640px;
+  --screens-md: 768px;
+  --screens-lg: 1024px;
+  --screens-xl: 1280px;
+  --screens-2xl: 1536px;
 }

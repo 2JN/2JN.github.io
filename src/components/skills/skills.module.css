@@ -1,0 +1,32 @@
+p {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skillsContainer {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.skillsDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-right: 1rem;
+}
+
+.skillsContainer :global(#canvasContainer) {
+  display: flex;
+  justify-content: center;
+}
+
+.skillsContainer :global(#canvas) {
+  width: 100%;
+  max-width: var(--screens-sm );
+}
+
+@media only screen and (min-width: 768px) {
+  .skillsContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

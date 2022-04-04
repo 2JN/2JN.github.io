@@ -81,9 +81,23 @@ const Nav = () => {
               About
             </Link>
           </li>
-          <li>Skills</li>
-          <li>Projects</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/skills" activeClassName={styles.activeLink}>
+              Skills
+            </Link>
+          </li>
+          <li>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a href="#" aria-disabled="true">
+              Projects
+            </a>
+          </li>
+          <li>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a href="#" aria-disabled="true">
+              Contact
+            </a>
+          </li>
         </ul>
 
         <div className={styles.mobileMenu}>
@@ -107,9 +121,21 @@ const Nav = () => {
               About
             </Link>
           </li>
-          <li>Skills</li>
-          <li>Projects</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/skills" activeClassName={styles.activeLink}>
+              Skills
+            </Link>
+          </li>
+          <li>
+            <a href="#" aria-disabled="true">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-disabled="true">
+              Contact
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

@@ -132,7 +132,7 @@ const Resume = () => {
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
-              <span className={styles.text}>Gutemala, Quetzaltenango</span>
+              <span className={styles.text}>Guatemala, Quetzaltenango</span>
             </li>
           </ul>
         </div>

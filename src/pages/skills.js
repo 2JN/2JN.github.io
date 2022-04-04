@@ -1,16 +1,16 @@
 import React from "react";
 
 import Nav from "../components/nav";
-import About from "../components/about";
+import Skills from "../components/skills";
 import WaveBorder from "../components/waveBorder";
 import Footer from "../components/footer";
 
-const AboutPage = () => {
+const IndexPage = () => {
   return (
     <main className="page-container">
       <div>
         <Nav />
-        <About />
+        <Skills />
       </div>
       <div className="page-footer">
         <WaveBorder borderColor={"top"} />
@@ -20,4 +20,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default IndexPage;
