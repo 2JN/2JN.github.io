@@ -247,3 +247,9 @@ h2.title {
     width: 100%;
   }
 }
+
+@media print {
+  .resumeContainer p {
+    display: block
+  }
+}

@@ -139,3 +139,9 @@ span[role="button"] {
 span[role="button"]:hover {
   text-decoration: underline;
 }
+
+@media print {
+  nav, h1, p, .page-footer {
+    display: none
+  }
+}

@@ -1,3 +1,9 @@
+* {
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
 p {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -5,4 +11,27 @@ p {
 
 .resume {
   margin: 3.5rem 0;
+}
+
+.save {
+  text-align: right;
+}
+
+.save a {
+  color: var(--secondary-color);
+}
+
+@page {
+  margin: 0;
+  size: 1120px 1921.7px;
+}
+
+@media print {
+  :global(.container) {
+    padding: 0;
+  }
+
+  .resume {
+    margin: 0;
+  }
 }

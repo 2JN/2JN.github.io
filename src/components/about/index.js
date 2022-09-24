@@ -4,6 +4,10 @@ import * as styles from "./about.module.css";
 import Resume from "../resume";
 import Animate from "../animate";
 
+const printResume = () => {
+  window.print();
+};
+
 const About = () => {
   // TODO: wait for page to load to show content
 
@@ -17,6 +21,13 @@ const About = () => {
           connect with business' audiences using engaging visuals and intuitive
           interfaces. You can take a look to whole set of skills on my resume
           down there!
+        </p>
+
+        <p className={styles.save}>
+          You can also{" "}
+          <a href="#" onClick={printResume}>
+            save it
+          </a>
         </p>
 
         <div className={styles.resume}>
