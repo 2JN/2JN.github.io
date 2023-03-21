@@ -1,0 +1,8 @@
+.blog h2 {
+  font-size: 2rem;
+}
+
+.blog p {
+  font-size: 1.75rem;
+  margin-block-start: 0;
+}

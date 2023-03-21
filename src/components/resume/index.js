@@ -185,11 +185,26 @@ const Resume = () => {
           <h2 className={styles.title}>Experience</h2>
           <div className={styles.box}>
             <div className={styles.time}>
-              <h5>2021 - Present</h5>
+              <h5>2022 - Present</h5>
+              <h5>AgileEngine</h5>
+            </div>
+            <div className={styles.text}>
+              <h4>Fullstack Developer</h4>
+              <p>
+                As a Fullstack Developer I worked on the migration of a site
+                that used Django Templates and React to a React and GraphQL
+                Single Page Application
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.box}>
+            <div className={styles.time}>
+              <h5>2021 - 2022</h5>
               <h5>Zaelot</h5>
             </div>
             <div className={styles.text}>
-              <h4>Fronet Developer</h4>
+              <h4>Frontend Developer</h4>
               <p>
                 Specialized on Frontend Development, building eCommerce websites
                 and administrative site applications with Vuejs and Angular
