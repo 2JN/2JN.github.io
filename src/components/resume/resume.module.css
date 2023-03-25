@@ -14,6 +14,11 @@ ul li svg {
   box-shadow: 0 2rem 3.5rem rgba(0, 0, 0, 0.1);
 }
 
+.resumeContainer p {
+  font-size: 1.75rem;
+  margin-block-start: 0;
+}
+
 .percent {
   position: relative;
   width: 100%;
@@ -166,6 +171,12 @@ h2.title {
   min-width: 150px;
 }
 
+.about .box .text h4,
+.about .box .time h5 {
+  margin: 0 0 1.25rem;
+  margin-block: 0;
+}
+
 .about .box .time h5 {
   color: var(--grey-color);
   font-weight: 600;
@@ -250,6 +261,10 @@ h2.title {
 
 @media print {
   .resumeContainer p {
-    display: block
+    display: block;
+  }
+
+  @page {
+    size: 12.5in 18.65in;
   }
 }

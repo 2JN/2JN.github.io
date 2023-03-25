@@ -1,0 +1,127 @@
+---
+title: Fullstack Concepts!
+slug: /blog/fullstack_concepts
+date: 2023-03-18
+---
+
+import Layout from "../../components/blog/layout";
+
+<Layout>
+# A Basic Guide of Concepts You Should Know to Be a FullStack Dev
+
+Hey there!, thanks for tankig some time to check this guide. I wanted to have a list of concepts at hand to jog memory on some of the fundamentals of Web Development. These is a very basic list of concepts (as the title says) so please keep that in mind and if you think something is wrong or missing please let met know.
+
+I also want to mention that I could have oversimplified in some concepts and that was intentional, as this is not supposed to be an indepth guide, think of it as a more of a "glossary".
+
+## Javascript
+
+---
+
+**Closures**
+: Is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
+
+**Promise**
+: Is a proxy for a value not necessarily known when the promise is created. It allow you to associate handlers with an asynchronous action's eventual success value of failure reason.
+
+**PROXY**
+: In programming is something that acts as an agent or intermediary for something else.
+
+Here is an example on how to run an Array of Promises that runs in parallel.
+
+```js
+const promises = [
+  () => new Promise((res) => setTimeout(() => res(1), 1000)),
+  () => new Promise((res) => setTimeout(() => res(2), 3000)),
+  () => new Promise((res) => setTimeout(() => res(3), 2000)),
+];
+
+promises.reduce(async (prevPromise, nextPromise) => {
+  await prevPromise;
+  const res = await nextPromise();
+  console.log(res);
+}, Promise.resolve());
+```
+
+It took me a while to wrap my head over this example, to me the tricky part was why prevPromise working if there was not an explicit return. I forgot that `async` returns by default a `Promise`, pretty neat right!
+
+**Rest Syntax**
+: Collects multiple elements and "condeses" them into a single element.
+
+**Spread Operator**
+: It allows to extended the content of iterables where zero or more arguments or elements are expected.
+
+**Destructuring Assignment**
+: It unpacks values from arrays, or properties from objects, into distinct variables.
+
+**Shallow Copies and Deep Copies**
+: Shallow copies are used for "flat" objects and deep copies are used for "nested" objects. By "flat" objects we mean objects that contain only primitive values. Nested objects mean objects that contain non-primitive values.
+
+<br />
+
+## TypeScript
+
+---
+
+**Generics**
+: Allow to create a component that components that can work with a variety of types rather than a single one.
+
+**Implements and Extends**
+: A Class that `implements` from an interface or another Class has to implement all methods and attributes from which it implets from.
+
+A Class that `extends` from another Class has all the methods and attributes from the parent class.
+
+**Type casting**
+: commonly know as type conversion, is technique to transform one type into another in TypeScrypt
+
+Type casting in TypeScript can be done with the `as` keyword or the `<>` operator.
+
+**Utility Types**
+: TypeScript provides utility types to facilitate common types transformations. Some are: `Awaited<Type>`, `Partial<Type>`, `Required<Type>`
+
+**Unions and Intersection Types/Operators**
+: These are one of the ways that allow to compose types.
+
+A union type describes a value that can be one of several types. We use the vertical bar `|` to separate each type, so `number | string | boolean` is the type of a value that can be a number, a string, or a boolean.
+
+An intersection type combines multiple types into one. For example, `Person & Serializable & Loggable` is a type which is all of `Person` and `Serializable` and `Loggable`.
+
+**Types and Interfaces**
+: Interfaces are basically a way to describe data shapes, for example, an object.
+
+Type is a definition of a type of data, for example, a union, primitive, intersection, tuple, or any other type.
+
+In TypeScript, we can easily extend and implement interfaces. This is not possible with types though.
+
+<br />
+
+## Nodejs
+
+---
+
+Simply put, Node.js is a platform that executes server-side JavaScript programs that can communicate with I/O sources like networks and file systems.
+
+Node.js performs best on intense I/O applications requiring speed and scalability with lots of concurrent connections, like video & audio streaming, real-time apps, live chats, gaming apps, collaboration tools, or stock exchange software.
+
+Node.js may not be the right choice for CPU intensive operations. Instead the traditional thread model may perform better.
+
+**Buffer**
+: A buffer is a space in computer memory, usually RAM, that stores binaries. A binary stream is a collection of large amounts of binary data. Due to their massive size, binary streams are not sent together. Instead, they are broken into smaller pieces before sending.
+
+When the data processing unit cannot accept any more data streams, excess data is stored in a buffer until the data processing unit is ready to receive more data.
+
+**Streams**
+: They are data-handling method and are used to read or write input into output sequentially.
+
+Streams read chunks of data piece by piece, processing its content without keeping it all in memory.
+
+Let’s take a “streaming” services such as YouTube or Netflix for example: these services don’t make you download the video and audio feed all at once. Instead, your browser receives the video as a continuous flow of chunks, allowing the recipients to start watching and/or listening almost immediately.
+
+**Blocking/Non-Blocking Operations**
+: Blocking refers to operations that block further execution until that operation finishes while non-blocking refers to code that doesn’t block execution.
+
+Blocking methods execute synchronously while non-blocking methods execute asynchronously.
+
+**Middleware**
+: Are functions that intercept route handlers, adding some kind of information.
+
+</Layout>
