@@ -8,6 +8,7 @@ const HeadComponents = [
     crossOrigin="anonymous"
   />,
   <script
+    key="goat1000"
     src="https://www.goat1000.com/jquery.tagcanvas.min.js"
     crossOrigin="anonymous"
   />,

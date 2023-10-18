@@ -42,7 +42,7 @@ promises.reduce(async (prevPromise, nextPromise) => {
 }, Promise.resolve());
 ```
 
-It took me a while to wrap my head over this example, to me the tricky part was why prevPromise working if there was not an explicit return. I forgot that `async` returns by default a `Promise`, pretty neat right!
+It took me a while to wrap my head over this example, to me the tricky part was why prevPromise works when there is no explicit return. I forgot that `async` returns by default a `Promise`, pretty neat right!
 
 **Rest Syntax**
 : Collects multiple elements and "condeses" them into a single element.
@@ -63,7 +63,7 @@ It took me a while to wrap my head over this example, to me the tricky part was 
 ---
 
 **Generics**
-: Allow to create a component that components that can work with a variety of types rather than a single one.
+: Allow to create a component that can work with a variety of types rather than a single one.
 
 **Implements and Extends**
 : A Class that `implements` from an interface or another Class has to implement all methods and attributes from which it implets from.

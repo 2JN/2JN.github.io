@@ -3,7 +3,6 @@ module.exports = {
     title: "2J Portfolio",
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-mdx",
     {
       resolve: "gatsby-source-filesystem",

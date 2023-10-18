@@ -1,0 +1,112 @@
+---
+title: AWS Cloud Practioner!
+slug: /blog/fullstack_concepts
+date: 2023-03-18
+---
+
+import Layout from "../../components/blog/layout";
+
+<Layout>
+# A Basic Guide of Concepts You Should Know to Pass the AWS Cloud Practitioner Certificate
+
+After that short title I think there is little to nothing to explain what this article is about, so what if we just get into it?
+
+## AWS Availability Zones
+
+---
+
+Each region in AWS has around three to six Availability Zones (AZ from now on). Each AZ is one or more discrete data centers with redudant
+power, networking and connectivity in this way they are separated from disasters. This interconnected AZ will form a **region**.
+
+Three things to take in consideration while picking an AZ are:
+
+- Compliance with the government rules
+- Latency
+- Price
+
+## AWS Points of Presence (Edge Locations)
+
+---
+
+## AWS IAM
+
+---
+
+The general idea is to grant the least privilege to users. I.E. lowest privilege/permission level possible
+
+**Users**
+: Mapped to a physical user, has a password for AWS Console.
+
+**Groups**
+: Contains users only which will have access to resources allowed for the specific group.
+
+**Policies**
+: JSON document that outlines permissions for users or groups.
+
+**Roles**
+: For EC2 instances or AWS Services.
+
+## AWS EC2
+
+---
+
+EC2 is a *virtual server* wich can be lunched in a region of choice. The geographical proximity of the instance to the
+users impacts on the latency optimization.
+
+**AMI**
+
+These are customized images that have some specific configurations for an EC2 instance. These like templates to get started on a specific
+task more efficiently. These can be created to be sold or purchased by anyone on the AWS store.
+
+**EBS**
+
+Elastic block store is where the data of EC2 instances is saved. This are SSD/HDD devices that are connected to the instances
+over the network thrugh the VPC. The EBS has to be on the same AZ as the EC2 instance so they can connect. An EBS can be connected
+to a single EC2 but an EC2 can have many EBS connected at the same time [^1]. 
+
+**Security Groups**
+
+Security groups act as a virtual firewall to your server. It can control *incoming* or *outgoing* traffic of the EC2 instance.
+
+[^1]: There is a special EBS that can be connected to multiple EC2 instances.
+
+**Auto Scaling**
+
+Auto scaling enables to automatically expand or shrink your server infrastructure based on your application traffic pattern.
+
+**Scalability**
+
+Scalability means that an application / system can handle greater loads by adapting.
+
+There are two kinds of scalability:
+- Vertical scalability: Increase the size of the instance
+- Horizontal scalability: Increase the number of instances / systems for the application
+
+**Elasticity**
+
+Means that a system can "auto-scale" based on the load. This is cloud friendly: pay-per-use, match demand, optimeze costs.
+
+**Agility**
+
+New IT resources are jus a click away. Which means that you reduce the time to make resources available from weeks to just minutes.
+(Not directly related to scalability, but, it could be a distractor questoin on the test).
+
+## AWS S3
+
+---
+
+Simple Storage Service provides object storage through a web service interface.
+
+**Storage Types**
+
+- S3 Standard: For data that requires high durability, availability & performance for *frequently accessed* data.
+
+- S3 Standard IA: For data that is accessed *less frequently*, but requires rapid access when needed.
+
+- S3 One Zone IA: Unlike other storage classes, which store data in a minimum of three availability zone, S3 One Zone IA stores data in a single AZ.
+
+- Amazon Glacier: Is a low cost storage service for *data archiving*. Glacier objects are NOT available for real time access.
+
+- S3 RRS: Reduced Redundancy Storage, is designed for noncritical reproducible data.
+
+</Layout>
