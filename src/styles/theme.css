@@ -15,3 +15,10 @@
   --screens-xl: 1280px;
   --screens-2xl: 1536px;
 }
+
+:root.light {
+  --background-color: #fffcf2;
+  --primary-color: #252422;
+  --dark-grey-color: #ccc5b9;
+  --grey-color: #403d39;
+}

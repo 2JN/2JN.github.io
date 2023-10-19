@@ -5,7 +5,9 @@ import * as styles from "./skills.module.css";
 
 const Skills = () => {
   useEffect(() => {
-    setTimeout(() => {
+    const intervalId = setInterval(() => {
+      if (!window.$) return;
+
       if (
         !window.$("#canvas").tagcanvas(
           {
@@ -30,7 +32,13 @@ const Skills = () => {
         // something went wrong, hide the canvas container
         window.$("#canvasContainer").hide();
       }
-    }, 2000);
+
+      clearInterval(intervalId);
+
+      return () => {
+        clearInterval(intervalId);
+      };
+    }, 200);
   }, []);
 
   return (

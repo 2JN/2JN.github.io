@@ -2,8 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "gatsby";
 import clsx from "clsx";
 
-import MenuIcon from "../icons/menu";
 import CrossIcon from "../icons/cross";
+import MenuIcon from "../icons/menu";
+import MoonIcon from "../icons/moon";
+import SunIcon from "../icons/sun";
+import { actions, useThemeContext } from "../../context/themeContext";
 import * as styles from "./nav.module.css";
 
 const elementInViewport = (el) => {
@@ -20,6 +23,7 @@ const Nav = () => {
   const closeRef = useRef();
   const previousScrollPosition = useRef(0);
   const [isOpen, setOpen] = useState(false);
+  const { state, dispatch } = useThemeContext();
 
   const isScrollingDown = () => {
     const scrolledPosition = window.scrollY;
@@ -68,12 +72,20 @@ const Nav = () => {
     setOpen((open) => !open);
   };
 
+  const onThemeBtnClick = () => {
+    dispatch({ type: actions.DARK_MODE, payload: !state.darkMode });
+  };
+
   return (
     <nav ref={navRef} className={styles.nav}>
       <div className="container">
         <a href="/" className={styles.logo}>
           2J
         </a>
+
+        <button className={styles.themeButton} onClick={onThemeBtnClick}>
+          {state.darkMode ? <SunIcon /> : <MoonIcon />}
+        </button>
 
         <ul className={styles.menuList}>
           <li>
@@ -101,7 +113,7 @@ const Nav = () => {
         </ul>
 
         <div className={styles.mobileMenu}>
-          <button className={styles.iconButton} onClick={onMenuClick}>
+          <button onClick={onMenuClick}>
             <div ref={menuRef}>
               <MenuIcon />
             </div>
