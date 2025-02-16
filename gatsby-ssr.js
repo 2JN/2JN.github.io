@@ -1,5 +1,7 @@
 import React from "react";
 
+import RootElement from "./src/components/rootElement";
+
 const HeadComponents = [
   <script
     key="jquery"
@@ -14,8 +16,10 @@ const HeadComponents = [
   />,
 ];
 
-const onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents(HeadComponents);
 };
 
-export { onRenderBody };
+export const wrapRootElement = ({ element }) => (
+  <RootElement>{element}</RootElement>
+);

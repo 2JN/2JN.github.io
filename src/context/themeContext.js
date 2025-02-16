@@ -7,14 +7,8 @@ export const actions = {
 };
 
 const ThemeProvider = ({ children }) => {
-  const localDarkMode = localStorage.getItem("darkMode");
-  let darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  if (localDarkMode === null) localStorage.setItem("darkMode", darkMode);
-  else darkMode = JSON.parse(localDarkMode);
-
   const initialState = {
-    darkMode,
+    darkMode: false,
   };
 
   const reducer = (state, action) => {
@@ -27,6 +21,16 @@ const ThemeProvider = ({ children }) => {
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    const localDarkMode = localStorage.getItem("darkMode");
+    let darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (localDarkMode === null) localStorage.setItem("darkMode", darkMode);
+    else darkMode = JSON.parse(localDarkMode);
+
+    dispatch({ type: actions.DARK_MODE, payload: darkMode });
+  }, []);
 
   useEffect(() => {
     if (state.darkMode) {

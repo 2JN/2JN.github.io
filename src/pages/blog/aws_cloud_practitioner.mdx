@@ -5,6 +5,7 @@ date: 2023-03-18
 ---
 
 import Layout from "../../components/blog/layout";
+import StorageComparisonTable from "../../components/blog/aws-storage-comparison-table/table";
 
 <Layout>
 # A Basic Guide of Concepts You Should Know to Pass the AWS Cloud Practitioner Certificate
@@ -12,10 +13,9 @@ import Layout from "../../components/blog/layout";
 After that short title I think there is little to nothing to explain what this article is about, so what if we just get into it?
 
 ## AWS Availability Zones
-
 ---
 
-Each region in AWS has around three to six Availability Zones (AZ from now on). Each AZ is one or more discrete data centers with redudant
+Each region in AWS has around three to six Availability Zones (AZ from now on). Each AZ is one or more discrete data centers with redundant
 power, networking and connectivity in this way they are separated from disasters. This interconnected AZ will form a **region**.
 
 Three things to take in consideration while picking an AZ are:
@@ -25,11 +25,9 @@ Three things to take in consideration while picking an AZ are:
 - Price
 
 ## AWS Points of Presence (Edge Locations)
-
 ---
 
 ## AWS IAM
-
 ---
 
 The general idea is to grant the least privilege to users. I.E. lowest privilege/permission level possible
@@ -47,10 +45,9 @@ The general idea is to grant the least privilege to users. I.E. lowest privilege
 : For EC2 instances or AWS Services.
 
 ## AWS EC2
-
 ---
 
-EC2 is a *virtual server* wich can be lunched in a region of choice. The geographical proximity of the instance to the
+EC2 is a _virtual server_ which can be lunched in a region of choice. The geographical proximity of the instance to the
 users impacts on the latency optimization.
 
 **AMI**
@@ -61,12 +58,12 @@ task more efficiently. These can be created to be sold or purchased by anyone on
 **EBS**
 
 Elastic block store is where the data of EC2 instances is saved. This are SSD/HDD devices that are connected to the instances
-over the network thrugh the VPC. The EBS has to be on the same AZ as the EC2 instance so they can connect. An EBS can be connected
-to a single EC2 but an EC2 can have many EBS connected at the same time [^1]. 
+over the network through the VPC. The EBS has to be on the same AZ as the EC2 instance so they can connect. An EBS can be connected
+to a single EC2 but an EC2 can have many EBS connected at the same time [^1].
 
 **Security Groups**
 
-Security groups act as a virtual firewall to your server. It can control *incoming* or *outgoing* traffic of the EC2 instance.
+Security groups act as a virtual firewall to your server. It can control _incoming_ or _outgoing_ traffic of the EC2 instance.
 
 [^1]: There is a special EBS that can be connected to multiple EC2 instances.
 
@@ -79,6 +76,7 @@ Auto scaling enables to automatically expand or shrink your server infrastructur
 Scalability means that an application / system can handle greater loads by adapting.
 
 There are two kinds of scalability:
+
 - Vertical scalability: Increase the size of the instance
 - Horizontal scalability: Increase the number of instances / systems for the application
 
@@ -89,24 +87,160 @@ Means that a system can "auto-scale" based on the load. This is cloud friendly: 
 **Agility**
 
 New IT resources are jus a click away. Which means that you reduce the time to make resources available from weeks to just minutes.
-(Not directly related to scalability, but, it could be a distractor questoin on the test).
+(Not directly related to scalability, but, it could be a distractor question on the test).
+
+## Elastic Load Balancing & Auto Scaling Groups
+
+_Load Balancers_ are servers that forward internet traffic to multiple servers (EC2 Instances) downstream.
+
+There are four kinds of load balancers offered by AWS:
+
+- Application Load Balancer (HTTP / HTTPS only) - Layer 7
+- Network Load Balancer (ultra-high performance, allows for TCP) - Layer 4
+- Gateway Load Balancer - Layer 3
+- Classic Load Balancer (retired in 2023) - Layer 4 & 7
+
+_Auto Scaling Groups_ scale in/out (add/remove EC2 instances) to match an increased/decreased load.
+
+Scaling strategies:
+
+- Manual Scaling - Update the size of an ASG manually
+- Dynamic Scaling - Respond to a changing demand
+- Predictive Scaling - Uses machine learning to predict future traffic ahead of time
 
 ## AWS S3
-
 ---
 
 Simple Storage Service provides object storage through a web service interface.
 
 **Storage Types**
 
-- S3 Standard: For data that requires high durability, availability & performance for *frequently accessed* data.
+- S3 Standard: For data that requires high durability, availability & performance for _frequently accessed_ data.
 
-- S3 Standard IA: For data that is accessed *less frequently*, but requires rapid access when needed.
+- S3 Standard IA: For data that is accessed _less frequently_, but requires rapid access when needed.
 
 - S3 One Zone IA: Unlike other storage classes, which store data in a minimum of three availability zone, S3 One Zone IA stores data in a single AZ.
 
-- Amazon Glacier: Is a low cost storage service for *data archiving*. Glacier objects are NOT available for real time access.
+- Amazon Glacier: Is a low cost storage service for _data archiving_. Glacier objects are NOT available for real time access.
 
 - S3 RRS: Reduced Redundancy Storage, is designed for noncritical reproducible data.
+
+**Storage Classes Comparison**
+
+<StorageComparisonTable />
+
+**AWS Snow Family**
+
+This is used when uploading some content to S3 could take a lot of time, so Amazon will send you a physical device to perform data migrations.
+
+The Rule of thumb is: _If it takes more than a week to transfer over the network, use Snowball devices_
+
+**AWS Storage Gateway**
+
+Is a service that provides a bridge between on-premise data and cloud data in S3. It's use case is for disaster recovery, backup & restore, tiered storage
+
+## Databases and Analytics
+---
+
+**Databases Services**
+
+- Amazon RDS: Relational Database Service. Aurora is an AWS implementation of PostgreSQL, MySQL...
+
+- Amazon ElastiCache: Provides a managed Redis or Memcached in memory database.
+
+- DynamoDB: NoSQL Database. Scales to massive workloads, distributed "serverless" database.
+
+- Redshift: OLAP (Online Analytical Processing) used for analytics and data warehousing.
+
+- Amazon EMR: (Elastic MapReduce) helps creating _Hadoop clusters (Big Data)_ to analyze and process vast amounts of data.
+
+- Amazon Athena: Serverless query service to perform analytics against S3 objects.
+
+- Amazon QuickSight: Serverless machine learning powered business intelligence service to create interactive dashboards.
+
+- DocumentDB: NoSQL database implementation of MongoDB.
+
+- Amazon Neptune: Fully managed graph database. A popular use would be social networks.
+
+- Amazon Timestream: Fully managed, fast, scalable, serverless time series database.
+
+- Amazon QLDB: Quantum Ledger Database. A ledger is a book recording financial transactions.
+
+- Amazon Managed Blockchain: Use to build applications where multiple parties can execute transactions without the need for a trusted, central authority.
+
+- AWS Glue: Managed extract, transform and load (ETL) service.
+
+- AWS DMS: Data Migration Service
+
+## ECS - Lambda - Batch - Lightsail
+---
+
+- Elastic Container Service: this service is used to launch Docker containers on AWS
+
+- Fargate: Same as ECS but you don't need to provision the infrastructure (no EC2 instances to manage)
+
+- ECR: Elastic Container Registry, this is where Docker images are store to be run by ECS or Fargate
+
+**Serverless**
+
+Is a new paradigm in which the developers don't have to manage servers, they just deploy the code.
+
+## Deployment and Managing Infrastructure at Scale
+---
+
+**Cloud Formation**
+
+Is a declarative way of outlining your AWS Infrastructure, for any resources.
+
+- Cloud Development Kit (CDK): Used to define cloud infrastructure on familiar languages: JS/TS, Python, Java and .NET
+
+- Elastic Beanstalk: Is a developer centric view of deploying an application on AWS. It uses: EC2, ASG, ELB, RDS, etc... In summary Beanstalk is a PaaS (Platform as a Service)
+
+- AWS CodeDeploy: make code deployment for applications automatically. It's a hybrid service because it works on EC2 instances as well as for on-premises servers
+
+- AWS CodeBuild: Compiles source code, run tests and produces packages that are ready to be deployed.
+
+- AWS CodePipeline: Orchestrates the different steps to have the code automatically pushed to production
+
+- AWS CodeArtifact: It provides a storing and retrieving service for dependencies, working with tools like Maven, Gradle, npm, twine, pip and NuGet
+
+- AWS Systems Manager (SSM): Helps manage EC2 and On-Premise systems at scale. It's most important features are:
+  - Patching automation for enhanced compliance
+  - Run commands across an entire fleet of servers
+  - Store parameter configuration with the SSM Parameter Store
+
+## Global Infrastructure
+---
+
+**Route 53**
+
+Is a managed DNS. There are four routing policies for it:
+
+- Simple Routing: No health checks
+
+- Weighted Routing: Distributes the traffic across multiple EC2 instances
+
+- Latency Routing: Minimizes latency based on the request origin
+
+- Failover Routing: Helps on disaster recovery
+
+**CloudFront**
+
+Is a Content Delivery Network (CDN). It caches website content on the edge for it to be accessed faster depending on where the request is being made.
+
+**AWS Global Accelerator**
+
+Improves performance for a wide range of applications running in one or more AWS regions using the internal AWS network.
+
+## Cloud Integrations
+---
+
+**SQS**
+
+Simple Queue Service, it's used to _decouple_ applications. 
+
+**SNS**
+
+Simple Notification Service, in this the _event publisher_ sends one message to one SNS topic and many _event subscribers_ listen to the SNS topic notification
 
 </Layout>
