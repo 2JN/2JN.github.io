@@ -19,7 +19,7 @@ const IndexPage = () => {
       <WaveBorder />
       <ContactMe />
       <WaveBorder borderColor={"top"} />
-      <Footer background="secondary" />
+      <Footer className="bg-(--dark-grey-color)" />
     </main>
   );
 };

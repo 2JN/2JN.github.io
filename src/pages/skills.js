@@ -14,7 +14,7 @@ const IndexPage = () => {
       </div>
       <div className="page-footer">
         <WaveBorder borderColor={"top"} />
-        <Footer background="secondary" />
+        <Footer className="bg-(--dark-grey-color)" />
       </div>
     </main>
   );
