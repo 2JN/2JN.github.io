@@ -9,13 +9,11 @@ import Layout from "../../components/blog/layout";
 <Layout>
 # A Basic Guide of Concepts You Should Know to Be a FullStack Dev
 
-Hey there!, thanks for tankig some time to check this guide. I wanted to have a list of concepts at hand to jog memory on some of the fundamentals of Web Development. These is a very basic list of concepts (as the title says) so please keep that in mind and if you think something is wrong or missing please let met know.
+Hey there!, thanks for taking some time to check this guide. I wanted to have a list of concepts at hand to jog memory on some of the fundamentals of Web Development. These is a very basic list of concepts (as the title says) so please keep that in mind and if you think something is wrong or missing please let met know.
 
-I also want to mention that I could have oversimplified in some concepts and that was intentional, as this is not supposed to be an indepth guide, think of it as a more of a "glossary".
+I also want to mention that I could have oversimplified in some concepts and that was intentional, as this is not supposed to be an in-depth guide, think of it as a more of a "glossary".
 
 ## Javascript
-
----
 
 **Closures**
 : Is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
@@ -45,7 +43,7 @@ promises.reduce(async (prevPromise, nextPromise) => {
 It took me a while to wrap my head over this example, to me the tricky part was why prevPromise works when there is no explicit return. I forgot that `async` returns by default a `Promise`, pretty neat right!
 
 **Rest Syntax**
-: Collects multiple elements and "condeses" them into a single element.
+: Collects multiple elements and "condenses" them into a single element.
 
 **Spread Operator**
 : It allows to extended the content of iterables where zero or more arguments or elements are expected.
@@ -56,17 +54,13 @@ It took me a while to wrap my head over this example, to me the tricky part was 
 **Shallow Copies and Deep Copies**
 : Shallow copies are used for "flat" objects and deep copies are used for "nested" objects. By "flat" objects we mean objects that contain only primitive values. Nested objects mean objects that contain non-primitive values.
 
-<br />
-
 ## TypeScript
-
----
 
 **Generics**
 : Allow to create a component that can work with a variety of types rather than a single one.
 
 **Implements and Extends**
-: A Class that `implements` from an interface or another Class has to implement all methods and attributes from which it implets from.
+: A Class that `implements` from an interface or another Class has to implement all methods and attributes from which it implements from.
 
 A Class that `extends` from another Class has all the methods and attributes from the parent class.
 
@@ -92,11 +86,7 @@ Type is a definition of a type of data, for example, a union, primitive, interse
 
 In TypeScript, we can easily extend and implement interfaces. This is not possible with types though.
 
-<br />
-
 ## Nodejs
-
----
 
 Simply put, Node.js is a platform that executes server-side JavaScript programs that can communicate with I/O sources like networks and file systems.
 
@@ -123,5 +113,9 @@ Blocking methods execute synchronously while non-blocking methods execute asynch
 
 **Middleware**
 : Are functions that intercept route handlers, adding some kind of information.
+
+## Security
+
+**Cross Scripting**
 
 </Layout>

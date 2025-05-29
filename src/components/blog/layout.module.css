@@ -1,12 +1,15 @@
+@reference "../../styles/global.css";
+
+.blog h1 {
+  @apply text-3xl mb-8;
+}
+
 .blog h2 {
-  font-size: 2rem;
+  @apply text-2xl mt-8 mb-4;
 }
 
-.blog p {
-  font-size: 1.75rem;
-  margin-block-start: 0;
-}
-
-.blog li p {
-  display: inline;
+.blog p,
+.blog pre,
+.blog section ul {
+  @apply mb-4;
 }

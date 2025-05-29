@@ -1,28 +1,8 @@
-.projects {
-  contain: content;
-  background-color: var(--dark-grey-color);
-}
-
-.projects :global(.container) {
-  margin: 4rem auto 8rem;
-}
-
-.projects p {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.project {
-  display: flex;
-  gap: 3.5rem;
-  flex-wrap: wrap;
-}
-
-.project .imgContainer {
+.imgContainer {
   position: relative;
 }
 
-.project .imgContainer::before {
+.imgContainer::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -32,29 +12,6 @@
   transition: opacity 1s;
 }
 
-.project:hover .imgContainer::before {
+.imgContainer:hover::before {
   opacity: 10%;
-}
-
-.project ul {
-  display: flex;
-  gap: 2.5rem;
-  padding: 0;
-}
-
-.project ul li {
-  list-style: none;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--primary-color)
-}
-
-@media only screen and (min-width: 576px) {
-  .project {
-    flex-wrap: nowrap;
-  }
-
-  .project > div {
-    flex: 0 0 50%;
-  }
 }

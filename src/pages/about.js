@@ -7,11 +7,10 @@ import Footer from "../components/footer";
 
 const AboutPage = () => {
   return (
-    <main className="page-container">
-      <div>
-        <Nav />
-        <About />
-      </div>
+    <main className="page-container [&_.container]:px-4 print:[&_nav,_&_h1,_&_p,&_.page-footer]:hidden">
+      <Nav />
+      <About />
+
       <div className="page-footer">
         <WaveBorder borderColor={"top"} />
         <Footer className="bg-(--dark-grey-color)" />

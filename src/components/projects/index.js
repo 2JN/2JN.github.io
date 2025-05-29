@@ -2,17 +2,16 @@ import React from "react";
 
 import Project from "./project";
 import Animate from "../animate";
-import * as styles from "./projects.module.css";
 import connectBbc from "../../images/projects/connectbbc.png";
 
 const Projects = () => {
   return (
-    <section className={`${styles.projects}`}>
+    <section className="bg-(--dark-grey-color) pt-10 pb-18">
       <div className="container">
         <Animate>
-          <h2>Featured Projects</h2>
+          <h2 className="text-3xl mb-8">Featured Projects</h2>
 
-          <p>
+          <p className="mb-6 text-xl">
             Some of them made for the Web, others made as for mobile apps, all
             of them developed to reach the client.
           </p>
@@ -25,15 +24,17 @@ const Projects = () => {
           imageAlt="connect bbc"
           projectLink={"https://www.connectbbc.com"}
         >
-          <p>
+          <p className="mb-6 text-xl">
             I worked on this project when it was on an early stage, the website
             is able to make appointments for rides, it includes a functional
             map.
           </p>
-          <ul>
-            <li>Nextjs</li>
-            <li>Bootstrap</li>
-            <li>Nodejs</li>
+          <ul className="flex gap-8">
+            {["Nextjs", "Bootstrap", "Nodejs"].map((tech) => (
+              <li className="py-1 px-3 border-1 border-(--primary-color) rounded-md">
+                {tech}
+              </li>
+            ))}
           </ul>
         </Project>
       </div>

@@ -1,22 +1,10 @@
-ul li svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  color: var(--primary-color);
-}
+@reference "../../styles/global.css";
 
 .resumeContainer {
-  width: 100%;
-  max-width: 1200px;
+  @apply w-full grid grid-cols-[repeat(1,_1fr)] md:grid-cols-[1fr_2fr];
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
   background: white;
   box-shadow: 0 2rem 3.5rem rgba(0, 0, 0, 0.1);
-}
-
-.resumeContainer p {
-  font-size: 1.75rem;
-  margin-block-start: 0;
 }
 
 .percent {
@@ -42,9 +30,12 @@ ul li svg {
   animation: bartTransition 1s ease-in-out 0.2s both;
 }
 
+.resumeContainer ul li svg {
+  @apply w-6 h-6 text-(--primary-color);
+}
+
 .resumeContainer .leftSide {
-  padding: 3rem;
-  background: var(--secondary-color);
+  @apply p-12 space-y-12 bg-(--secondary-color);
 }
 
 .profileText {
@@ -82,10 +73,6 @@ ul li svg {
   font-weight: 300;
 }
 
-.contactInfo {
-  padding-top: 3rem;
-}
-
 .title {
   color: white;
   text-transform: uppercase;
@@ -94,15 +81,11 @@ ul li svg {
 }
 
 .contactInfo ul {
-  margin-top: 20px;
+  @apply space-y-6 py-4 pl-4;
 }
 
 .contactInfo ul li {
-  margin: 0.75rem 0;
-  margin-top: 20px;
-  list-style: none;
-  display: inline-flex;
-  align-items: center;
+  @apply flex items-center;
 }
 
 .contactInfo ul li span {
@@ -117,25 +100,6 @@ ul li svg {
   margin-bottom: 1rem;
 }
 
-.contactInfo.education h5 {
-  color: var(--primary-color);
-  font-weight: 500;
-}
-
-.contactInfo.education h4 {
-  color: white;
-  font-weight: 300;
-}
-
-.contactInfo.education h4:nth-child(2) {
-  color: white;
-  font-weight: 500;
-}
-
-.contactInfo.lang ul li span {
-  margin: 0;
-}
-
 .contactInfo.lang .percent {
   display: block;
   margin-top: 5px;
@@ -143,16 +107,7 @@ ul li svg {
 }
 
 .resumeContainer .rightSide {
-  padding: 3rem;
-  background-color: var(--dark-grey-color);
-}
-
-.about {
-  margin-bottom: 3rem;
-}
-
-.about:last-child {
-  margin-bottom: 0;
+  @apply p-12 space-y-12 bg-(--dark-grey-color);
 }
 
 h2.title {
@@ -163,45 +118,28 @@ h2.title {
 }
 
 .about .box {
-  display: flex;
-  margin: 1.25rem 0;
+  @apply flex my-6;
 }
 
-.about .box .time {
-  min-width: 150px;
-}
-
-.about .box .text h4,
-.about .box .time h5 {
-  margin: 0 0 1.25rem;
-  margin-block: 0;
-}
-
-.about .box .time h5 {
-  color: var(--grey-color);
-  font-weight: 600;
-  text-transform: uppercase;
+.secondaryHeader {
+  @apply text-sm min-w-36 text-(--grey-color) font-medium uppercase;
 }
 
 .about .box .text h4 {
-  color: var(--secondary-color);
-  font-size: 1rem;
-  text-transform: uppercase;
+  @apply text-sm text-(--secondary-color) font-medium uppercase;
+}
+
+.about .box .text p {
+  @apply font-light;
 }
 
 .skills .box {
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 9rem 1fr;
   justify-content: center;
   align-items: center;
-}
-
-.skills .box h4 {
-  color: var(--grey-color);
-  font-weight: 500;
-  text-transform: uppercase;
 }
 
 .skills .box .percent {
@@ -214,22 +152,10 @@ h2.title {
 }
 
 .interest ul li {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  margin: 0.875rem 0;
-}
-
-.interest ul li svg {
-  margin-right: 0.5rem;
+  @apply flex items-center gap-2 font-medium;
 }
 
 @media screen and (max-width: 1000px) {
-  .resumeContainer {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
   .interest ul {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -259,12 +185,18 @@ h2.title {
   }
 }
 
+@page {
+  margin: 0;
+  padding: 0;
+  size: 15in 11.85in;
+}
+
 @media print {
-  .resumeContainer p {
-    display: block;
+  .resumeContainer {
+    @apply grid-cols-[1fr_2fr];
   }
 
-  @page {
-    size: 12.5in 18.65in;
+  .resumeContainer p {
+    display: block;
   }
 }

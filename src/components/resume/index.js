@@ -141,9 +141,11 @@ const Resume = () => {
           <h3 className={styles.title}>Education</h3>
           <ul>
             <li>
-              <h5>2010 - 2013</h5>
-              <h4>Master Degree in Computer Science</h4>
-              <h4>Mariano Galvez University</h4>
+              <p>
+                2010 - 2013 <br />
+                Master Degree in Computer Science <br />
+                Mariano Galvez University
+              </p>
             </li>
           </ul>
         </div>
@@ -184,9 +186,9 @@ const Resume = () => {
         <div className={styles.about}>
           <h2 className={styles.title}>Experience</h2>
           <div className={styles.box}>
-            <div className={styles.time}>
-              <h5>2022 - Present</h5>
-              <h5>AgileEngine</h5>
+            <div className={styles.secondaryHeader}>
+              <p>2022 - Present</p>
+              <p>AgileEngine</p>
             </div>
             <div className={styles.text}>
               <h4>Fullstack Developer</h4>
@@ -199,9 +201,9 @@ const Resume = () => {
           </div>
 
           <div className={styles.box}>
-            <div className={styles.time}>
-              <h5>2021 - 2022</h5>
-              <h5>Zaelot</h5>
+            <div className={styles.secondaryHeader}>
+              <p>2021 - 2022</p>
+              <p>Zaelot</p>
             </div>
             <div className={styles.text}>
               <h4>Frontend Developer</h4>
@@ -213,9 +215,9 @@ const Resume = () => {
           </div>
 
           <div className={styles.box}>
-            <div className={styles.time}>
-              <h5>2020 - 2021</h5>
-              <h5>Freelance</h5>
+            <div className={styles.secondaryHeader}>
+              <p>2020 - 2021</p>
+              <p>Freelance</p>
             </div>
             <div className={styles.text}>
               <h4>Freelance Developer</h4>
@@ -228,9 +230,9 @@ const Resume = () => {
           </div>
 
           <div className={styles.box}>
-            <div className={styles.time}>
-              <h5>2018 - 2020</h5>
-              <h5>Ciancoders</h5>
+            <div className={styles.secondaryHeader}>
+              <p>2018 - 2020</p>
+              <p>Ciancoders</p>
             </div>
             <div className={styles.text}>
               <h4>Software Developer</h4>
@@ -249,7 +251,7 @@ const Resume = () => {
         >
           <h2 className={styles.title}>Professional Skills</h2>
           <div className={styles.box}>
-            <h4>JavaScript</h4>
+            <h4 className={styles.secondaryHeader}>JavaScript</h4>
             <div className={styles.percent}>
               <div style={{ width: "90%" }}>
                 <div className={styles.bar} />
@@ -257,7 +259,7 @@ const Resume = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <h4>React</h4>
+            <h4 className={styles.secondaryHeader}>React</h4>
             <div className={styles.percent}>
               <div style={{ width: "85%" }}>
                 <div className={styles.bar} />
@@ -265,7 +267,7 @@ const Resume = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <h4>Vue</h4>
+            <h4 className={styles.secondaryHeader}>Vue</h4>
             <div className={styles.percent}>
               <div style={{ width: "75%" }}>
                 <div className={styles.bar} />
@@ -273,7 +275,7 @@ const Resume = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <h4>Angular</h4>
+            <h4 className={styles.secondaryHeader}>Angular</h4>
             <div className={styles.percent}>
               <div style={{ width: "60%" }}>
                 <div className={styles.bar} />
@@ -281,7 +283,7 @@ const Resume = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <h4>Nodejs</h4>
+            <h4 className={styles.secondaryHeader}>Nodejs</h4>
             <div className={styles.percent}>
               <div style={{ width: "80%" }}>
                 <div className={styles.bar} />
@@ -289,7 +291,7 @@ const Resume = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <h4>Django/Python</h4>
+            <h4 className={styles.secondaryHeader}>Django/Python</h4>
             <div className={styles.percent}>
               <div style={{ width: "70%" }}>
                 <div className={styles.bar} />
@@ -297,7 +299,7 @@ const Resume = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <h4>Laravel/PHP</h4>
+            <h4 className={styles.secondaryHeader}>Laravel/PHP</h4>
             <div className={styles.percent}>
               <div style={{ width: "60%" }}>
                 <div className={styles.bar} />

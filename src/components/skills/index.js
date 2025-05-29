@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
 
-import * as styles from "./skills.module.css";
-
 const Skills = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -11,7 +9,7 @@ const Skills = () => {
       if (
         !window.$("#canvas").tagcanvas(
           {
-            outlineColour: "#ff00ff",
+            outlineColor: "#ff00ff",
             outlineThickness: 0.5,
             freezeActive: true,
             shuffleTags: true,
@@ -42,11 +40,11 @@ const Skills = () => {
   }, []);
 
   return (
-    <section>
-      <div className="container">
-        <h1>My Skills</h1>
-        <div className={styles.skillsContainer}>
-          <div className={styles.skillsDescription}>
+    <section className="py-12 grow">
+      <div className="container mx-auto">
+        <h1 className="text-3xl">My Skills</h1>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="flex flex-col justify-evenly [&>p]:text-xl">
             <p>
               I have experience building responsive websites. I like to create
               UI effects and animations focused on the end user experience.
@@ -54,12 +52,17 @@ const Skills = () => {
 
             <p>
               I also have some degree of experience building RESTful and graphQL
-              APIs. I like to work on challeging projects and enjoy learning and
-              discussing new subjects.
+              APIs. I like to work on challenging projects and enjoy learning
+              and discussing new subjects.
             </p>
           </div>
-          <div id="canvasContainer">
-            <canvas id="canvas" width="500" height="500">
+          <div id="canvasContainer" className="flex justify-center">
+            <canvas
+              id="canvas"
+              width="500"
+              height="500"
+              className="w-full max-w-xl"
+            >
               <div id="tags">
                 <a href="#">ReactJS</a>
                 <a href="#">Angular</a>

@@ -10,15 +10,15 @@ import Footer from "../components/footer";
 
 const IndexPage = () => {
   return (
-    <main>
+    <main className="[&_.container]:px-4">
       <Cover />
       <Nav />
       <Description />
-      <WaveBorder borderColor={"top"} />
+      <WaveBorder borderColor="top" />
       <Projects />
       <WaveBorder />
       <ContactMe />
-      <WaveBorder borderColor={"top"} />
+      <WaveBorder borderColor="top" />
       <Footer className="bg-(--dark-grey-color)" />
     </main>
   );

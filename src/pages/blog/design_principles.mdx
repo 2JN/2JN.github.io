@@ -7,52 +7,132 @@ date: 2023-03-18
 import Layout from "../../components/blog/layout";
 
 <Layout>
+# Pillars of OOP
+
+Object oriented programming is based on four pillars: Abstraction, Encapsulation, Polymorphism and Inheritance.
+
+## Abstraction
+
+Objects only model attributes and behaviors in a specific context, ignoring the rest.
+
+## Encapsulation
+
+Hide parts of it's state and behavior from other objects. Exposing only a limited interface to the rest of the program.
+
+## Inheritance
+
+Construct new classes on top of existing ones.
+
+## Polymorphism
+
+Call an implementation of a class even when it's real type is unknown in the current context.
+
+# Objects Relations
+
+## Dependency
+
+Is the most basic and weakest type of relation. There is a dependency between two classes if some changes to the definition of one class might result in modifications to another class.
+
+## Association
+
+Indicates that one object uses or interacts with another
+
+## Aggregation
+
+Represents a "has" relationship. It occurs when the lifecycle of the contained objects doesn't strongly depend on the lifecycle of the container objects.
+
+## Composition
+
+Is just like an aggregation relationship, with the difference that the contained object can't exist without the container object.
+
 # SOLID Principles
 
 SOLID is a mnemonic for five design principles intended to make software designs more understandable, flexible and maintainable.
 
 ## Single Responsibility Principle
----
 
 A class should have just one reason to change.
 
 Try to make responsible for a single part of the functionality provided by the software, and make the responsibility entirely encapsulated by the class.
 
 ## Open/Close Principle
----
 
 Classes should be opened to extension but close to modification.
 
 A class is open if you can extend it, produce a subclass and do whatever you want with it. At the same time, a class is closed if it's 100% ready to be used by other classes.
 
 ## Liskov Substitution Principle
----
 
 When extending a class, you should be able to pass objects of the subclass in place of objects of the parent class without breaking the client code.
 
 This means that the subclass should remain compatible with the behavior of the superclass.
 
 ## Interface Segregation Principle
----
 
 Client's shouldn't be forced to depend on methods they do not use.
 
 Bloated interfaces should be break down into more granular and specific ones.
 
 ## Dependency Inversion Principle
----
 
 High-level classes shouldn't depend on low-level classes. Both should depend on abstractions. Abstractions shouldn't depend on details. Details should depend on abstractions.
-
 
 # Software Patterns
 
 All patterns can be categorized by their intent, or purpose:
+
 - Creational patterns
 - Structural patterns
 - Behavioral patterns
 
+## Creational Design Patterns
 
-## Factory Method
+These provide various object creation mechanisms, which increase flexibility and reuse of existing code.
+
+### Factory Method
+
+Is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+
+### Prototype
+
+Is a creational design pattern that lets you copy existing objects without making your code dependant of their classes.
+
+### Singleton
+
+Is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
+
+## Structural Design Patterns
+
+These explain how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient.
+
+### Adapters
+
+Is a structural design pattern that allow objects with incompatible interfaces to collaborate.
+
+### Decorator
+
+Is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+
+### Proxy
+
+Is a structural design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object,
+allowing you to perform something either before or after the request gets through to the original object.
+
+## Behavioral Design Patterns
+
+These are concerned with algorithms and the assignment of responsibilities between objects.
+
+### Chain of Responsibility
+
+Lets you pass request along a chain of handlers. Upon receiving a request, each handler decides either to process the request oor to pass it ot the next handler in the chain.
+
+### Observer
+
+Also know as Event-Subscriber, Listener. Observer is a behavioral design pattern that lets you define a subscription mechanism to notify multiple objects about any events that happen
+to the object they're observing.
+
+### State
+
+It lets an object alter it's behavior when it's internal state changes. It appears as if the object changed its class.
 
 </Layout>

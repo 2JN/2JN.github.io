@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as styles from "./table.module.css";
+import * as styles from "./storage-comparison-table.module.css";
 
 const Table = () => (
   <table className={styles.table}>

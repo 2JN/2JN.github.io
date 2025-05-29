@@ -1,5 +1,5 @@
 .labelContainer {
-  --inputPaddingTop: 1.75rem;
+  --inputPaddingTop: 1.5rem;
   position: relative;
   border: 1px solid var(--secondary-color);
 }
@@ -11,9 +11,12 @@
 .labelContainer label {
   padding: 0 1.5rem 0;
   position: absolute;
-  top: 0.5rem;
+  top: 0.75rem;
   z-index: -1;
-  transition: top 0.25s, color 0.25s, font-size 0.25s;
+  transition:
+    top 0.25s,
+    color 0.25s,
+    font-size 0.25s;
 }
 
 .labelContainer input,
@@ -27,8 +30,8 @@
 .labelContainer:focus-within label,
 .labelContainer label.nonEmpty {
   color: var(--grey-color);
-  top: 0.1rem;
-  font-size: 1rem;
+  top: 0.25rem;
+  font-size: 0.75rem;
 }
 
 .labelContainer input:focus,

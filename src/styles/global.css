@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "./animate.css";
 @import "./theme.css";
-@import "./responsive.css";
 
 @font-face {
   font-family: "Montserrat";
@@ -9,7 +8,9 @@
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+  print-color-adjust: exact !important;
 }
 
 h1,
@@ -23,18 +24,8 @@ button {
   transition: color 400ms ease-in-out;
 }
 
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  font-size: 1.5rem;
-  line-height: 2;
-  color: var(--primary-color);
-  background-color: var(--background-color);
+  @apply text-(--primary-color) bg-(--background-color);
   font-family:
     "Montserrat",
     -apple-system,
@@ -49,25 +40,10 @@ body {
     sans-serif;
 }
 
-a,
-a:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
 section h1,
 section h2,
 section h3 {
-  margin-top: 0;
   color: var(--secondary-color);
-}
-
-section h2 {
-  font-size: 3rem;
-}
-
-ul {
-  list-style-position: inside;
 }
 
 [aria-disabled="true"] {
@@ -76,20 +52,17 @@ ul {
 }
 
 .btn {
-  display: inline-block;
-  padding: 1.5rem 2.5rem;
+  padding: 1rem;
   border-width: 1px;
   border-style: solid;
   background-color: transparent;
-  text-decoration: none;
-  font-size: 1.25rem;
   transition:
     color 0.75s,
     background-color 0.75s;
 }
 
 .btn-round {
-  border-radius: 2.5em;
+  border-radius: 2em;
 }
 
 .btn-primary {
@@ -112,12 +85,6 @@ ul {
   color: inherit;
 }
 
-.container {
-  width: 100%;
-  padding: 0 1rem;
-  margin: 0 auto;
-}
-
 .errorMessage {
   color: var(--secondary-color);
   font-size: 1rem;
@@ -138,15 +105,8 @@ ul {
 .page-container {
   min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-}
-
-.page-container > * {
-  width: 100%;
-}
-
-.page-container > .page-footer {
-  align-self: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 span[role="button"] {
@@ -156,13 +116,4 @@ span[role="button"] {
 
 span[role="button"]:hover {
   text-decoration: underline;
-}
-
-@media print {
-  nav,
-  h1,
-  p,
-  .page-footer {
-    display: none;
-  }
 }

@@ -7,11 +7,9 @@ import Footer from "../components/footer";
 
 const IndexPage = () => {
   return (
-    <main className="page-container">
-      <div>
-        <Nav />
-        <Skills />
-      </div>
+    <main className="page-container [&_.container]:px-4">
+      <Nav />
+      <Skills />
       <div className="page-footer">
         <WaveBorder borderColor={"top"} />
         <Footer className="bg-(--dark-grey-color)" />

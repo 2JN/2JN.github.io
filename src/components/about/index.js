@@ -1,6 +1,5 @@
 import React from "react";
 
-import * as styles from "./about.module.css";
 import Resume from "../resume";
 import Animate from "../animate";
 
@@ -12,9 +11,9 @@ const About = () => {
   // TODO: wait for page to load to show content
 
   return (
-    <section>
-      <div className="container">
-        <h1>Hey There! I'm Jose Navas</h1>
+    <section className="py-12 print:py-0">
+      <div className="container mx-auto space-y-6 [&>p]:text-xl print:mx-0 print:p-0! print:max-w-none">
+        <h1 className="text-3xl">Hey There! I'm Jose Navas</h1>
 
         <p>
           I'm Web Developer that focuses on building websites that help to
@@ -23,18 +22,16 @@ const About = () => {
           down there!
         </p>
 
-        <p className={styles.save}>
+        <p className="text-right">
           You can also{" "}
-          <a href="#" onClick={printResume}>
+          <button onClick={printResume} className="text-(--secondary-color)">
             save it
-          </a>
+          </button>
         </p>
 
-        <div className={styles.resume}>
-          <Animate>
-            <Resume />
-          </Animate>
-        </div>
+        <Animate>
+          <Resume />
+        </Animate>
       </div>
     </section>
   );

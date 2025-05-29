@@ -9,8 +9,8 @@ const Layout = ({ children }) => (
   <main className="page-container">
     <div className={styles.blog}>
       <Nav />
-      <section>
-        <div className="container">{children}</div>
+      <section className="py-16">
+        <div className="container mx-auto">{children}</div>
       </section>
     </div>
     <div className="page-footer">

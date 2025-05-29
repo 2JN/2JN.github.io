@@ -1,11 +1,11 @@
 ---
-title: AWS Cloud Practioner!
+title: AWS Cloud Practitioner!
 slug: /blog/fullstack_concepts
 date: 2023-03-18
 ---
 
 import Layout from "../../components/blog/layout";
-import StorageComparisonTable from "../../components/blog/aws-storage-comparison-table/table";
+import StorageComparisonTable from "../../components/blog/aws_cloud_practitioner/storage-comparison-table";
 
 <Layout>
 # A Basic Guide of Concepts You Should Know to Pass the AWS Cloud Practitioner Certificate
@@ -13,7 +13,6 @@ import StorageComparisonTable from "../../components/blog/aws-storage-comparison
 After that short title I think there is little to nothing to explain what this article is about, so what if we just get into it?
 
 ## AWS Availability Zones
----
 
 Each region in AWS has around three to six Availability Zones (AZ from now on). Each AZ is one or more discrete data centers with redundant
 power, networking and connectivity in this way they are separated from disasters. This interconnected AZ will form a **region**.
@@ -25,10 +24,8 @@ Three things to take in consideration while picking an AZ are:
 - Price
 
 ## AWS Points of Presence (Edge Locations)
----
 
 ## AWS IAM
----
 
 The general idea is to grant the least privilege to users. I.E. lowest privilege/permission level possible
 
@@ -45,7 +42,6 @@ The general idea is to grant the least privilege to users. I.E. lowest privilege
 : For EC2 instances or AWS Services.
 
 ## AWS EC2
----
 
 EC2 is a _virtual server_ which can be lunched in a region of choice. The geographical proximity of the instance to the
 users impacts on the latency optimization.
@@ -109,7 +105,6 @@ Scaling strategies:
 - Predictive Scaling - Uses machine learning to predict future traffic ahead of time
 
 ## AWS S3
----
 
 Simple Storage Service provides object storage through a web service interface.
 
@@ -140,7 +135,6 @@ The Rule of thumb is: _If it takes more than a week to transfer over the network
 Is a service that provides a bridge between on-premise data and cloud data in S3. It's use case is for disaster recovery, backup & restore, tiered storage
 
 ## Databases and Analytics
----
 
 **Databases Services**
 
@@ -173,7 +167,6 @@ Is a service that provides a bridge between on-premise data and cloud data in S3
 - AWS DMS: Data Migration Service
 
 ## ECS - Lambda - Batch - Lightsail
----
 
 - Elastic Container Service: this service is used to launch Docker containers on AWS
 
@@ -186,7 +179,6 @@ Is a service that provides a bridge between on-premise data and cloud data in S3
 Is a new paradigm in which the developers don't have to manage servers, they just deploy the code.
 
 ## Deployment and Managing Infrastructure at Scale
----
 
 **Cloud Formation**
 
@@ -210,7 +202,6 @@ Is a declarative way of outlining your AWS Infrastructure, for any resources.
   - Store parameter configuration with the SSM Parameter Store
 
 ## Global Infrastructure
----
 
 **Route 53**
 
@@ -233,14 +224,28 @@ Is a Content Delivery Network (CDN). It caches website content on the edge for i
 Improves performance for a wide range of applications running in one or more AWS regions using the internal AWS network.
 
 ## Cloud Integrations
----
 
 **SQS**
 
-Simple Queue Service, it's used to _decouple_ applications. 
+Simple Queue Service, it's used to _decouple_ applications.
 
 **SNS**
 
 Simple Notification Service, in this the _event publisher_ sends one message to one SNS topic and many _event subscribers_ listen to the SNS topic notification
+
+## VPC and Networking
+
+VPC stands for virtual private cloud which is a private network used to deploy resources. These VPCs can be partitioned using _Subnets_.
+
+Public Subnets can have access to the internet by implementing an _Internet Gateway_ and Private Subnets can use NAT Gateway to give them access to the internet
+while keeping them private.
+
+**Network ACL**
+
+NACL (Network ACL) is a firewall that controls traffic from and to a subnet.
+
+**Security Groups**
+
+Also a firewall tough this one controls traffic in and out from an EC2 instance.
 
 </Layout>

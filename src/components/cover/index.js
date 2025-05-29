@@ -3,12 +3,16 @@ import React from "react";
 import * as styles from "./cover.module.css";
 
 const Cover = () => (
-  <header className={styles.cover}>
+  <header
+    className={`${styles.cover} min-h-screen relative flex items-center justify-center`}
+  >
     <div className="container">
-      <h4>Jose Navas</h4>
-      <p>Full Stack JavaScript Developer,</p>
-      <p>Passionate Technology Enthusiast</p>
-      <h4>Builder of Responsive and Accessible Websites</h4>
+      <h1 className="text-xl text-(--secondary-color)">Jose Navas</h1>
+      <p className="text-4xl leading-18">Full Stack JavaScript Developer,</p>
+      <p className="text-4xl leading-18">Passionate Technology Enthusiast</p>
+      <p className="text-xl text-(--secondary-color)">
+        Builder of Responsive and Accessible Websites
+      </p>
     </div>
   </header>
 );

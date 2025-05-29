@@ -19,13 +19,6 @@
   top: 0;
 }
 
-.nav :global(.container) {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
 .nav :global(.container > *) {
   line-height: 0;
   position: relative;
@@ -45,13 +38,6 @@
   height: 30px;
   stroke-width: 8;
   stroke-linecap: round;
-}
-
-.nav a.logo {
-  margin-right: auto;
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: 2rem;
 }
 
 .nav a:hover {

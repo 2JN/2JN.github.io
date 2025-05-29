@@ -78,12 +78,17 @@ const Nav = () => {
 
   return (
     <nav ref={navRef} className={styles.nav}>
-      <div className="container">
-        <a href="/" className={styles.logo}>
+      <div className="container mx-auto h-full flex items-center gap-4">
+        <a href="/" className="mr-auto text-(--primary-color) text-2xl">
           2J
         </a>
 
-        <button className={styles.themeButton} onClick={onThemeBtnClick}>
+        <button
+          type="button"
+          onClick={onThemeBtnClick}
+          className={styles.themeButton}
+          aria-label="change theme"
+        >
           {state.darkMode ? <SunIcon /> : <MoonIcon />}
         </button>
 
@@ -113,7 +118,7 @@ const Nav = () => {
         </ul>
 
         <div className={styles.mobileMenu}>
-          <button onClick={onMenuClick}>
+          <button type="button" onClick={onMenuClick}>
             <div ref={menuRef}>
               <MenuIcon />
             </div>
